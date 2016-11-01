@@ -157,12 +157,6 @@ class simplib::sysctl (
         'net.ipv4.tcp_tw_reuse': value => $net__ipv4__tcp_tw_reuse
       }
 
-      # This may not exist until additional packages are present
-      sysctl { 'net.netfilter.nf_conntrack_max':
-        value  => $net__netfilter__nf_conntrack_max,
-        silent => true
-      }
-
       # Security Related Settings
       sysctl {
         'fs.suid_dumpable':                           value => $fs__suid_dumpable;
